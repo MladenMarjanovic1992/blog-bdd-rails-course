@@ -2,8 +2,13 @@
 @import "bootstrap";
 
 body {
+  padding-top: 80px;
   background: #e1e1e1;
   color: #64103F;
+}
+
+header {
+  margin-top: -80px;
 }
 
 // Navbar styling
@@ -91,4 +96,9 @@ body {
 
 .edit-delete {
   margin-top: 20px;
+}
+
+// Sign up -- Sign in
+.sign-link a {
+  color: #64103F;
 }
