@@ -10,4 +10,6 @@
   <div class="article-show-body">
     <%= @article.body %>
   </div>
-</article-class>
+  
+  <%= link_to "Edit article", edit_article_path(@article), class: "btn btn-primary btn-large btn-space" %>
+</article>
