@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.feature "Signing up users" do
   
-  scenario "with valid credentials" do
+  scenario "with invalid credentials" do
     
     visit "/"
     click_link "Sign up"
@@ -12,7 +12,7 @@ RSpec.feature "Signing up users" do
     fill_in "Password confirmation", with: ""
     click_button "Sign up"
     
-    #expect(page).to have_content("You have signed up successfully.")
+    #expect(page).to have_content("You have not signed up successfully.")
     
   end
   
@@ -26,7 +26,7 @@ RSpec.feature "Signing up users" do
     fill_in "Password confirmation", with: "zvezdara92"
     click_button "Sign up"
     
-    #expect(page).to have_content "You have not signed up successfully."
+    expect(page).to have_content "You have signed up successfully."
     
   end
     
