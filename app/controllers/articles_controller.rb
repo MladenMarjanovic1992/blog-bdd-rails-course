@@ -32,11 +32,17 @@ class ArticlesController < ApplicationController
   end
   
   def destroy
-    if @article.destroy
-      flash[:success] = "Article has been deleted"
+    unless @article.user == current_user
+      flash[:danger] = "You need to sign in or sign up to continue."
       redirect_to articles_path
     else
-      flash.now[:danger] = "Article has not been deleted"
+      if @article.destroy
+        flash[:success] = "Article deleted successfully."
+        redirect_to articles_path
+      else
+        flash.now[:danger] = "You can't delete an article you don't own."
+        redirect_to articles_path
+      end
     end
   end
   
